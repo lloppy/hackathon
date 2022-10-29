@@ -18,99 +18,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/linearLayout3"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="horizontal">-->
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/linearLayout2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="649dp"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <Button-->
-<!--                android:id="@+id/transport"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Транспорт" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/nedvizh"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Недвижимость" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/veschi"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Личные вещи" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/virtual"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Виртуальные вещи" />-->
-
-<!--        </LinearLayout>-->
-
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="649dp"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <Button-->
-<!--                android:id="@+id/dom"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Дом и дача" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/electr"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Электоника" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/hobby"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Хобби и отдых" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/animals"-->
-<!--                android:layout_width="@dimen/sizeCategoryW"-->
-<!--                android:layout_height="@dimen/sizeCategoryH"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Животные" />-->
-<!--        </LinearLayout>-->
-<!--    </LinearLayout>-->
-
     <Button
         android:id="@+id/addButton"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="100dp"
         android:text="Добавить"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#9C27B0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="469dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
