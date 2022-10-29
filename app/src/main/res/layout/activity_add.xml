@@ -7,7 +7,7 @@
     tools:context=".AddActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/loadImageView"
         android:layout_width="331dp"
         android:layout_height="318dp"
         app:srcCompat="@drawable/choose"
@@ -26,7 +26,7 @@
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/loadImageView" />
 
     <EditText
         android:id="@+id/name"
