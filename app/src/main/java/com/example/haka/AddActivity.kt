@@ -5,11 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -26,6 +22,15 @@ import java.util.*
 
 class AddActivity : AppCompatActivity() {
     val REQUEST_CODE = 100
+    val path: String
+        get() {
+            val extras = intent.extras
+            val value = extras!!.getString("data")
+            Log.e("data", value.toString())
+            val path =  convertCyrilic(value.toString()).toString()
+            return path
+        }
+
     lateinit var auth: FirebaseAuth
     lateinit var name: String
 
@@ -44,6 +49,8 @@ class AddActivity : AppCompatActivity() {
         val value = extras!!.getString("data")
         Log.e("data", value.toString())
         describe.text = value.toString()
+        val path =  convertCyrilic(value.toString()).toString()
+        Log.e("data", path.toString())
 
         val imageView = findViewById<ImageView>(R.id.loadImageView)
         imageView.setOnClickListener{
@@ -82,7 +89,7 @@ class AddActivity : AppCompatActivity() {
 
     private fun writeDataToFirebase(nameInput: EditText) {
         database = Firebase.database
-        myRef = database.getReference(name)
+        myRef = database.getReference(name).child(path)
         myRef.setValue(nameInput.text.toString())
 
         Toast.makeText(this, "Сохранено", Toast.LENGTH_LONG).show()
@@ -94,7 +101,8 @@ class AddActivity : AppCompatActivity() {
             val fileName = UUID.randomUUID().toString() +".jpg"
 
             val database = FirebaseDatabase.getInstance()
-            val refStorage = FirebaseStorage.getInstance().reference.child("$name/$fileName")
+            val refStorage = FirebaseStorage.getInstance().reference.child("$name/$path/$fileName")
+            Log.e("data", "$name/$path/$fileName")
 
             refStorage.putFile(fileUri)
                 .addOnSuccessListener(
@@ -108,5 +116,19 @@ class AddActivity : AppCompatActivity() {
                     print(e.message)
                 })
         }
+    }
+
+    fun convertCyrilic(message: String): String? {
+        val abcCyr = charArrayOf(' ','а','б','в','г','д','ѓ','е', 'ж','з','ѕ','и','ј','к','л','љ','м','н','њ','о','п','р','с','т', 'ќ','у', 'ф','х','ц','ч','џ','ш', 'А','Б','В','Г','Д','Ѓ','Е', 'Ж','З','Ѕ','И','Ј','К','Л','Љ','М','Н','Њ','О','П','Р','С','Т', 'Ќ', 'У','Ф', 'Х','Ц','Ч','Џ','Ш','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','/','-')
+        val abcLat = arrayOf(" ","a","b","v","g","d","]","e","zh","z","y","i","j","k","l","q","m","n","w","o","p","r","s","t","'","u","f","h", "c",";", "x","{","A","B","V","G","D","}","E","Zh","Z","Y","I","J","K","L","Q","M","N","W","O","P","R","S","T","KJ","U","F","H", "C",":", "X","{", "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","/","-")
+        val builder = StringBuilder()
+        for (i in 0 until message.length) {
+            for (x in abcCyr.indices) {
+                if (message[i] == abcCyr[x]) {
+                    builder.append(abcLat[x])
+                }
+            }
+        }
+        return builder.toString()
     }
 }
