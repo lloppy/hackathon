@@ -43,9 +43,9 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-        binding.bSignIn.setOnClickListener {
-            signInWithGoogle()
-        }
+        signInWithGoogle()
+
+
     }
 
     private fun getClient(): GoogleSignInClient {
@@ -76,7 +76,7 @@ class SignInActivity : AppCompatActivity() {
     }
     private fun checkAuthState(){
         if (auth.currentUser != null){
-            val i = Intent(this, MainActivity::class.java)
+            val i = Intent(this, BasicActivity::class.java)
             startActivity(i)
         }
     }
