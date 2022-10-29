@@ -67,7 +67,7 @@ class MyCollection : AppCompatActivity() {
 
         val addButton: Button = findViewById(R.id.addButton)
         addButton.setOnClickListener{
-            val i = Intent(this, AddActivity::class.java)
+            val i = Intent(this, CreateCardActivity::class.java)
             startActivity(i)
         }
 
