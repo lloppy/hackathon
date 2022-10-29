@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "744666599489",
+    "firebase_url": "https://haka-b0fbf-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "haka-b0fbf",
+    "storage_bucket": "haka-b0fbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744666599489:android:329b86892d1651617af6c0",
+        "android_client_info": {
+          "package_name": "com.example.haka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744666599489-i13a6d9qs3t706n7niheeu76uu02hf4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.haka",
+            "certificate_hash": "9431aa4dbddd8cb519903e150453a56d846d920f"
+          }
+        },
+        {
+          "client_id": "744666599489-j00hqalh7f79u7ic9l65gb9bb7jao0pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0NLyiI4hHilQPieY9E01_RZTj1gT3gWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744666599489-j00hqalh7f79u7ic9l65gb9bb7jao0pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
