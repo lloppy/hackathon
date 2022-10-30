@@ -39,6 +39,8 @@ import com.google.firebase.storage.ktx.storage
         name = auth.currentUser!!.displayName.toString()
         storage = Firebase.storage
 
+        //var dataAdd = intent.extras!!.getString("dataAdd")
+
         val addButton: Button = findViewById(R.id.addButton)
         addButton.setOnClickListener {
             val i = Intent(this, CreateCardActivity::class.java)

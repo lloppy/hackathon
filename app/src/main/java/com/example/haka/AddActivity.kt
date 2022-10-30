@@ -118,6 +118,10 @@ class AddActivity : AppCompatActivity() {
                         taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                             val imageUrl = it.toString()
 
+//                            val i = Intent(this, AddActivity::class.java)
+//                            i.putExtra("dataAdd", imageUrl);
+//                            startActivity(i)
+
                             Log.e("datas", imageUrl)
 
                         }
